@@ -1,18 +1,36 @@
-# Cloud Server Troubleshooting Environment
+# Cloud Server RL Environment
 
-## Overview
-This project builds a Reinforcement Learning (RL) environment for cloud server troubleshooting. The environment simulates real-world scenarios where a server may go down, and an agent must take actions to recover it.
+## Description
 
-## Features
-- Custom RL environment
-- States: Server Down, Issue Found, Server Running
-- Actions: Restart, Check Logs
-- Reward-based learning system
-- Simple simulation of troubleshooting workflow
+This project simulates a cloud server recovery environment where an agent learns to bring a failed server back to a running state.
+
+## Environment
+
+* Initial state: "Server Down"
+* Actions:
+
+  * "check_logs" → finds issue
+  * "restart" → fixes server
+* Goal: Reach "Server Running"
+
+## API Endpoints
+
+* POST /reset → Reset environment
+* POST /step → Take action
+* GET /state → Get current state
+
+## Setup
+
+* Built using FastAPI
+* Deployed using Docker on Hugging Face Spaces
 
 ## Files
-- environment.py → Defines environment logic
-- inference.py → Runs interaction with environment
 
-## Goal
-To demonstrate how AI agents can automate cloud server recovery using Reinforcement Learning concepts.
+* app.py → API implementation
+* environment.py → RL environment
+* inference.py → baseline script
+* Dockerfile → container setup
+
+## Output
+
+Returns state, reward, and done flag based on actions.
