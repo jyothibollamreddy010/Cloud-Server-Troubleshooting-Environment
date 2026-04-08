@@ -1,36 +1,63 @@
-# Cloud Server RL Environment
+# 🚀 Cloud Server Environment
 
-## Description
+This project implements a cloud-based environment using FastAPI, designed to simulate and interact with an environment through API calls.
 
-This project simulates a cloud server recovery environment where an agent learns to bring a failed server back to a running state.
+It was built as part of a deployment-focused workflow, integrating backend logic, API design, and containerized deployment.
 
-## Environment
+---
 
-* Initial state: "Server Down"
-* Actions:
+## ⚙️ What this project does
 
-  * "check_logs" → finds issue
-  * "restart" → fixes server
-* Goal: Reach "Server Running"
+The system allows users to:
+•⁠  ⁠Reset the environment
+•⁠  ⁠Perform actions (step execution)
+•⁠  ⁠Retrieve the current state
 
-## API Endpoints
+All interactions are handled through REST APIs.
 
-* POST /reset → Reset environment
-* POST /step → Take action
-* GET /state → Get current state
+---
 
-## Setup
+## 🔌 API Endpoints
 
-* Built using FastAPI
-* Deployed using Docker on Hugging Face Spaces
+•⁠  ⁠POST /reset → Resets the environment  
+•⁠  ⁠POST /step → Performs an action and returns state, reward, done  
+•⁠  ⁠GET /state → Returns current environment state  
 
-## Files
+---
 
-* app.py → API implementation
-* environment.py → RL environment
-* inference.py → baseline script
-* Dockerfile → container setup
+## 🏗️ Architecture
 
-## Output
+•⁠  ⁠app.py → Core FastAPI application  
+•⁠  ⁠environment.py → Environment logic  
+•⁠  ⁠inference.py → Execution handling  
+•⁠  ⁠server/app.py → Deployment entry point  
+•⁠  ⁠Dockerfile → Container setup  
 
-Returns state, reward, and done flag based on actions.
+---
+
+## 🚀 Deployment
+
+•⁠  ⁠Deployed using Docker  
+•⁠  ⁠Hosted on Hugging Face Spaces  
+•⁠  ⁠Supports multi-mode deployment validation  
+
+---
+
+## 💡 Key Highlights
+
+•⁠  ⁠Built complete API system using FastAPI  
+•⁠  ⁠Structured project for scalable deployment  
+•⁠  ⁠Implemented Docker-based environment  
+•⁠  ⁠Solved real deployment issues (entrypoints, validation, config)
+
+---
+
+## ▶️ Run Locally
+
+uvicorn app:app --reload
+
+---
+
+## 🌐 Live Deployment
+
+Available via Hugging Face Space
