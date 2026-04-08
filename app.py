@@ -31,5 +31,3 @@ def get_state():
 def home():
     return {"message": "Cloud Server Environment Running"}
 
-def main():
-    return app
