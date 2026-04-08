@@ -1,7 +1,8 @@
-from app import main
+from app import app as fastapi_app
 
-app = main()
+def main():
+    return fastapi_app
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=7860)
+    uvicorn.run(fastapi_app, host="0.0.0.0", port=7860)
